@@ -7,7 +7,7 @@ License:	LGPL v2.1+
 Group:		Libraries
 Source0:	http://www.opensc.org/files/%{name}-%{version}.tar.gz
 # Source0-md5:	84ced902a9d1d6467d5806a989671f3a
-URL:		http://www.opensc.org/
+URL:		http://www.opensc.org/libp11/
 BuildRequires:	libltdl-devel
 BuildRequires:	openssl-devel
 BuildRequires:	pkgconfig
