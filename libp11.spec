@@ -71,7 +71,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc doc/{README,*.html,*.css}
+%doc doc/{ChangeLog,README,*.html,*.css}
 %attr(755,root,root) %{_libdir}/libp11.so.*.*.*
 
 %files devel
