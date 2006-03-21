@@ -5,9 +5,9 @@ Version:	0.2.1
 Release:	1
 License:	LGPL v2.1+
 Group:		Libraries
-Source0:	http://www.opensc.org/files/libp11/%{name}-%{version}.tar.gz
+Source0:	http://www.opensc-project.org/files/libp11/%{name}-%{version}.tar.gz
 # Source0-md5:	e91b612f6bc637552e1b4e69f40ed187
-URL:		http://www.opensc.org/libp11/
+URL:		http://www.opensc-project.org/libp11/
 BuildRequires:	libltdl-devel
 BuildRequires:	openssl-devel
 BuildRequires:	pkgconfig
