@@ -1,12 +1,12 @@
 Summary:	Layer on top of PKCS#11 API to make using PKCS#11 implementations easier
 Summary(pl):	Warstwa powy¿ej API PKCS#11 u³atwiaj±ca u¿ywanie implementacji PKCS#11
 Name:		libp11
-Version:	0.2.1
+Version:	0.2.2
 Release:	1
 License:	LGPL v2.1+
 Group:		Libraries
 Source0:	http://www.opensc-project.org/files/libp11/%{name}-%{version}.tar.gz
-# Source0-md5:	e91b612f6bc637552e1b4e69f40ed187
+# Source0-md5:	b8655b2065575eb1b96a9c924c234c63
 URL:		http://www.opensc-project.org/libp11/
 BuildRequires:	libltdl-devel
 BuildRequires:	openssl-devel
