@@ -2,7 +2,7 @@ Summary:	Layer on top of PKCS#11 API to make using PKCS#11 implementations easie
 Summary(pl):	Warstwa powy¿ej API PKCS#11 u³atwiaj±ca u¿ywanie implementacji PKCS#11
 Name:		libp11
 Version:	0.2.2
-Release:	1
+Release:	2
 License:	LGPL v2.1+
 Group:		Libraries
 Source0:	http://www.opensc-project.org/files/libp11/%{name}-%{version}.tar.gz
