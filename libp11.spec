@@ -1,5 +1,5 @@
 Summary:	Layer on top of PKCS#11 API to make using PKCS#11 implementations easier
-Summary(pl):	Warstwa powy¿ej API PKCS#11 u³atwiaj±ca u¿ywanie implementacji PKCS#11
+Summary(pl.UTF-8):   Warstwa powyÅ¼ej API PKCS#11 uÅ‚atwiajÄ…ca uÅ¼ywanie implementacji PKCS#11
 Name:		libp11
 Version:	0.2.2
 Release:	2
@@ -17,13 +17,13 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 Libp11 is a library implementing a small layer on top of PKCS#11 API
 to make using PKCS#11 implementations easier.
 
-%description -l pl
-Libp11 to biblioteka implementuj±ca niewielk± warstwê na wierzchu API
-PKCS#11 maj±ca u³atwiæ u¿ywanie implementacji PKCS#11.
+%description -l pl.UTF-8
+Libp11 to biblioteka implementujÄ…ca niewielkÄ… warstwÄ™ na wierzchu API
+PKCS#11 majÄ…ca uÅ‚atwiÄ‡ uÅ¼ywanie implementacji PKCS#11.
 
 %package devel
 Summary:	Header files for libp11 library
-Summary(pl):	Pliki nag³ówkowe biblioteki libp11
+Summary(pl.UTF-8):   Pliki nagÅ‚Ã³wkowe biblioteki libp11
 Group:		Development/Libraries
 Requires:	%{name} = %{version}-%{release}
 Requires:	libltdl-devel
@@ -32,19 +32,19 @@ Requires:	openssl-devel
 %description devel
 Header files for libp11 library.
 
-%description devel -l pl
-Pliki nag³ówkowe biblioteki libp11.
+%description devel -l pl.UTF-8
+Pliki nagÅ‚Ã³wkowe biblioteki libp11.
 
 %package static
 Summary:	Static libp11 library
-Summary(pl):	Statyczna biblioteka libp11
+Summary(pl.UTF-8):   Statyczna biblioteka libp11
 Group:		Development/Libraries
 Requires:	%{name}-devel = %{version}-%{release}
 
 %description static
 Static libp11 library.
 
-%description static -l pl
+%description static -l pl.UTF-8
 Statyczna biblioteka libp11.
 
 %prep
