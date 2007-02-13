@@ -1,5 +1,5 @@
 Summary:	Layer on top of PKCS#11 API to make using PKCS#11 implementations easier
-Summary(pl.UTF-8):   Warstwa powyżej API PKCS#11 ułatwiająca używanie implementacji PKCS#11
+Summary(pl.UTF-8):	Warstwa powyżej API PKCS#11 ułatwiająca używanie implementacji PKCS#11
 Name:		libp11
 Version:	0.2.2
 Release:	2
@@ -23,7 +23,7 @@ PKCS#11 mająca ułatwić używanie implementacji PKCS#11.
 
 %package devel
 Summary:	Header files for libp11 library
-Summary(pl.UTF-8):   Pliki nagłówkowe biblioteki libp11
+Summary(pl.UTF-8):	Pliki nagłówkowe biblioteki libp11
 Group:		Development/Libraries
 Requires:	%{name} = %{version}-%{release}
 Requires:	libltdl-devel
@@ -37,7 +37,7 @@ Pliki nagłówkowe biblioteki libp11.
 
 %package static
 Summary:	Static libp11 library
-Summary(pl.UTF-8):   Statyczna biblioteka libp11
+Summary(pl.UTF-8):	Statyczna biblioteka libp11
 Group:		Development/Libraries
 Requires:	%{name}-devel = %{version}-%{release}
 
