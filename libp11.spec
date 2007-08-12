@@ -1,15 +1,15 @@
 Summary:	Layer on top of PKCS#11 API to make using PKCS#11 implementations easier
 Summary(pl.UTF-8):	Warstwa powyżej API PKCS#11 ułatwiająca używanie implementacji PKCS#11
 Name:		libp11
-Version:	0.2.2
-Release:	2
+Version:	0.2.3
+Release:	1
 License:	LGPL v2.1+
 Group:		Libraries
 Source0:	http://www.opensc-project.org/files/libp11/%{name}-%{version}.tar.gz
-# Source0-md5:	b8655b2065575eb1b96a9c924c234c63
+# Source0-md5:	28ee2fc73fd82fbaa4a0670c972ca191
 URL:		http://www.opensc-project.org/libp11/
 BuildRequires:	libltdl-devel
-BuildRequires:	openssl-devel
+BuildRequires:	openssl-devel >= 0.9.7
 BuildRequires:	pkgconfig
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -27,7 +27,7 @@ Summary(pl.UTF-8):	Pliki nagłówkowe biblioteki libp11
 Group:		Development/Libraries
 Requires:	%{name} = %{version}-%{release}
 Requires:	libltdl-devel
-Requires:	openssl-devel
+Requires:	openssl-devel >= 0.9.7
 
 %description devel
 Header files for libp11 library.
@@ -71,7 +71,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc doc/{ChangeLog,README,*.html,*.css}
+%doc NEWS doc/{ChangeLog,README,*.html,*.css}
 %attr(755,root,root) %{_libdir}/libp11.so.*.*.*
 
 %files devel
