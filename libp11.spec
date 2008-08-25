@@ -1,12 +1,12 @@
 Summary:	Layer on top of PKCS#11 API to make using PKCS#11 implementations easier
 Summary(pl.UTF-8):	Warstwa powyżej API PKCS#11 ułatwiająca używanie implementacji PKCS#11
 Name:		libp11
-Version:	0.2.3
-Release:	2
+Version:	0.2.4
+Release:	1
 License:	LGPL v2.1+
 Group:		Libraries
 Source0:	http://www.opensc-project.org/files/libp11/%{name}-%{version}.tar.gz
-# Source0-md5:	28ee2fc73fd82fbaa4a0670c972ca191
+# Source0-md5:	9e2c5cbececde245e2d2f535bd49ce35
 URL:		http://www.opensc-project.org/libp11/
 BuildRequires:	libltdl-devel
 BuildRequires:	openssl-devel >= 0.9.7
@@ -51,7 +51,8 @@ Statyczna biblioteka libp11.
 %setup -q
 
 %build
-%configure
+%configure \
+	--enable-api-doc
 %{__make}
 
 %install
@@ -71,12 +72,13 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc NEWS doc/{ChangeLog,README,*.html,*.css}
+%doc NEWS doc/{README,nonpersistent/wiki.out/*}
 %attr(755,root,root) %{_libdir}/libp11.so.*.*.*
+%attr(755,root,root) %ghost %{_libdir}/libp11.so.0
 
 %files devel
 %defattr(644,root,root,755)
-%doc doc/api/*
+%doc doc/api.out/html/*
 %attr(755,root,root) %{_libdir}/libp11.so
 %{_libdir}/libp11.la
 %{_includedir}/libp11.h
