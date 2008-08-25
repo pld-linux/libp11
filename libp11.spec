@@ -72,7 +72,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc NEWS doc/{README,nonpersistent/wiki.out/*}
+%doc NEWS doc/{README,nonpersistent/{ChangeLog,wiki.out/*}}
 %attr(755,root,root) %{_libdir}/libp11.so.*.*.*
 %attr(755,root,root) %ghost %{_libdir}/libp11.so.0
 
