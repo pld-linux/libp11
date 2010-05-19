@@ -8,10 +8,13 @@ Group:		Libraries
 Source0:	http://www.opensc-project.org/files/libp11/%{name}-%{version}.tar.gz
 # Source0-md5:	9e2c5cbececde245e2d2f535bd49ce35
 URL:		http://www.opensc-project.org/libp11/
+BuildRequires:	doxygen
 BuildRequires:	libltdl-devel
 BuildRequires:	openssl-devel >= 0.9.7
 BuildRequires:	pkgconfig
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
+
+%undefine	__cxx
 
 %description
 Libp11 is a library implementing a small layer on top of PKCS#11 API
