@@ -1,12 +1,14 @@
+# TODO
+# - package apidocs
 Summary:	Layer on top of PKCS#11 API to make using PKCS#11 implementations easier
 Summary(pl.UTF-8):	Warstwa powyżej API PKCS#11 ułatwiająca używanie implementacji PKCS#11
 Name:		libp11
-Version:	0.2.4
-Release:	2
+Version:	0.2.7
+Release:	1
 License:	LGPL v2.1+
 Group:		Libraries
 Source0:	http://www.opensc-project.org/files/libp11/%{name}-%{version}.tar.gz
-# Source0-md5:	9e2c5cbececde245e2d2f535bd49ce35
+# Source0-md5:	564ab53ad7353903ddfdc15b153c44fb
 URL:		http://www.opensc-project.org/libp11/
 BuildRequires:	doxygen
 BuildRequires:	libltdl-devel
@@ -77,7 +79,7 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %doc NEWS doc/{README,nonpersistent/{ChangeLog,wiki.out/*}}
 %attr(755,root,root) %{_libdir}/libp11.so.*.*.*
-%attr(755,root,root) %ghost %{_libdir}/libp11.so.0
+%attr(755,root,root) %ghost %{_libdir}/libp11.so.1
 
 %files devel
 %defattr(644,root,root,755)
