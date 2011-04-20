@@ -3,12 +3,12 @@
 Summary:	Layer on top of PKCS#11 API to make using PKCS#11 implementations easier
 Summary(pl.UTF-8):	Warstwa powyżej API PKCS#11 ułatwiająca używanie implementacji PKCS#11
 Name:		libp11
-Version:	0.2.7
+Version:	0.2.8
 Release:	1
 License:	LGPL v2.1+
 Group:		Libraries
 Source0:	http://www.opensc-project.org/files/libp11/%{name}-%{version}.tar.gz
-# Source0-md5:	564ab53ad7353903ddfdc15b153c44fb
+# Source0-md5:	f46dcbbea13a0732ab095d36283d5060
 URL:		http://www.opensc-project.org/libp11/
 BuildRequires:	doxygen
 BuildRequires:	libltdl-devel
@@ -69,6 +69,9 @@ rm -rf $RPM_BUILD_ROOT
 install -d $RPM_BUILD_ROOT%{_examplesdir}/%{name}-%{version}
 cp -af examples/* $RPM_BUILD_ROOT%{_examplesdir}/%{name}-%{version}
 
+# obsoleted by pkgconfig
+%{__rm} $RPM_BUILD_ROOT%{_libdir}/libp11.la
+
 %clean
 rm -rf $RPM_BUILD_ROOT
 
@@ -79,13 +82,12 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %doc NEWS doc/{README,nonpersistent/{ChangeLog,wiki.out/*}}
 %attr(755,root,root) %{_libdir}/libp11.so.*.*.*
-%attr(755,root,root) %ghost %{_libdir}/libp11.so.1
+%attr(755,root,root) %ghost %{_libdir}/libp11.so.2
 
 %files devel
 %defattr(644,root,root,755)
 %doc doc/api.out/html/*
 %attr(755,root,root) %{_libdir}/libp11.so
-%{_libdir}/libp11.la
 %{_includedir}/libp11.h
 %{_pkgconfigdir}/libp11.pc
 %{_examplesdir}/%{name}-%{version}
