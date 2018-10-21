@@ -2,7 +2,7 @@ Summary:	Layer on top of PKCS#11 API to make using PKCS#11 implementations easie
 Summary(pl.UTF-8):	Warstwa powyżej API PKCS#11 ułatwiająca używanie implementacji PKCS#11
 Name:		libp11
 Version:	0.4.9
-Release:	1
+Release:	2
 License:	LGPL v2.1+
 Group:		Libraries
 #Source0Download: https://github.com/OpenSC/libp11/releases
@@ -91,7 +91,7 @@ takim jak OpenSC.
 %configure \
 	--enable-api-doc \
 	--disable-silent-rules \
-	--with-enginesdir=/%{_lib}/engines
+	--with-enginesdir=/%{_lib}/engines-1.1
 %{__make}
 
 %install
@@ -106,7 +106,7 @@ cp -af examples/* $RPM_BUILD_ROOT%{_examplesdir}/%{name}-%{version}
 # obsoleted by pkgconfig
 %{__rm} $RPM_BUILD_ROOT%{_libdir}/libp11.la
 # loadable module
-%{__rm} $RPM_BUILD_ROOT/%{_lib}/engines/*.la
+%{__rm} $RPM_BUILD_ROOT/%{_lib}/engines-1.1/*.la
 # packaged as %doc
 %{__rm} -r $RPM_BUILD_ROOT%{_docdir}/libp11
 
@@ -140,5 +140,5 @@ rm -rf $RPM_BUILD_ROOT
 
 %files -n openssl-engine-pkcs11
 %defattr(644,root,root,755)
-%attr(755,root,root) /%{_lib}/engines/libpkcs11.so
-%attr(755,root,root) /%{_lib}/engines/pkcs11.so
+%attr(755,root,root) /%{_lib}/engines-1.1/libpkcs11.so
+%attr(755,root,root) /%{_lib}/engines-1.1/pkcs11.so
