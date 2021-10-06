@@ -2,7 +2,7 @@ Summary:	Layer on top of PKCS#11 API to make using PKCS#11 implementations easie
 Summary(pl.UTF-8):	Warstwa powyżej API PKCS#11 ułatwiająca używanie implementacji PKCS#11
 Name:		libp11
 Version:	0.4.11
-Release:	1
+Release:	2
 License:	LGPL v2.1+
 Group:		Libraries
 #Source0Download: https://github.com/OpenSC/libp11/releases
@@ -10,7 +10,7 @@ Source0:	https://github.com/OpenSC/libp11/releases/download/%{name}-%{version}/%
 # Source0-md5:	8b907abd572b0eb8e63413549f68dbe1
 URL:		https://github.com/OpenSC/libp11
 BuildRequires:	doxygen
-BuildRequires:	openssl-devel >= 0.9.8
+BuildRequires:	openssl-devel >= 3.0.0
 # for proxy_module detection
 BuildRequires:	p11-kit-devel
 BuildRequires:	pkgconfig
@@ -31,7 +31,7 @@ Summary:	Header files for libp11 library
 Summary(pl.UTF-8):	Pliki nagłówkowe biblioteki libp11
 Group:		Development/Libraries
 Requires:	%{name} = %{version}-%{release}
-Requires:	openssl-devel >= 0.9.8
+Requires:	openssl-devel >= 3.0.0
 
 %description devel
 Header files for libp11 library.
@@ -67,7 +67,7 @@ Summary:	PKCS#11 engine for OpenSSL
 Summary(pl.UTF-8):	Silnik PKCS#11 dla OpenSSL-a
 Group:		Libraries
 Requires:	%{name} = %{version}-%{release}
-Requires:	openssl >= 0.9.8
+Requires:	openssl >= 3.0.0
 
 %description -n openssl-engine-pkcs11
 engine_pkcs11 is an implementation of an engine for OpenSSL. It can be
@@ -91,7 +91,7 @@ takim jak OpenSC.
 %configure \
 	--enable-api-doc \
 	--disable-silent-rules \
-	--with-enginesdir=/%{_lib}/engines-1.1
+	--with-enginesdir=/%{_lib}/engines-3
 %{__make}
 
 %install
@@ -106,7 +106,7 @@ cp -af examples/* $RPM_BUILD_ROOT%{_examplesdir}/%{name}-%{version}
 # obsoleted by pkgconfig
 %{__rm} $RPM_BUILD_ROOT%{_libdir}/libp11.la
 # loadable module
-%{__rm} $RPM_BUILD_ROOT/%{_lib}/engines-1.1/*.la
+%{__rm} $RPM_BUILD_ROOT/%{_lib}/engines-3/*.la
 # packaged as %doc
 %{__rm} -r $RPM_BUILD_ROOT%{_docdir}/libp11
 
@@ -140,5 +140,5 @@ rm -rf $RPM_BUILD_ROOT
 
 %files -n openssl-engine-pkcs11
 %defattr(644,root,root,755)
-%attr(755,root,root) /%{_lib}/engines-1.1/libpkcs11.so
-%attr(755,root,root) /%{_lib}/engines-1.1/pkcs11.so
+%attr(755,root,root) /%{_lib}/engines-3/libpkcs11.so
+%attr(755,root,root) /%{_lib}/engines-3/pkcs11.so
