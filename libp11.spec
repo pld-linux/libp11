@@ -1,13 +1,14 @@
 Summary:	Layer on top of PKCS#11 API to make using PKCS#11 implementations easier
 Summary(pl.UTF-8):	Warstwa powyżej API PKCS#11 ułatwiająca używanie implementacji PKCS#11
 Name:		libp11
-Version:	0.4.11
-Release:	2
+Version:	0.4.12
+Release:	1
 License:	LGPL v2.1+
 Group:		Libraries
 #Source0Download: https://github.com/OpenSC/libp11/releases
 Source0:	https://github.com/OpenSC/libp11/releases/download/%{name}-%{version}/%{name}-%{version}.tar.gz
-# Source0-md5:	8b907abd572b0eb8e63413549f68dbe1
+# Source0-md5:	2ec3c29523cc06ec60166b320c489c63
+Patch0:		%{name}-openssl3.patch
 URL:		https://github.com/OpenSC/libp11
 BuildRequires:	doxygen
 BuildRequires:	openssl-devel >= 3.0.0
@@ -86,6 +87,7 @@ takim jak OpenSC.
 
 %prep
 %setup -q
+%patch0 -p1
 
 %build
 %configure \
