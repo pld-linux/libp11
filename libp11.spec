@@ -1,14 +1,13 @@
 Summary:	Layer on top of PKCS#11 API to make using PKCS#11 implementations easier
 Summary(pl.UTF-8):	Warstwa powyżej API PKCS#11 ułatwiająca używanie implementacji PKCS#11
 Name:		libp11
-Version:	0.4.12
+Version:	0.4.13
 Release:	1
 License:	LGPL v2.1+
 Group:		Libraries
 #Source0Download: https://github.com/OpenSC/libp11/releases
 Source0:	https://github.com/OpenSC/libp11/releases/download/%{name}-%{version}/%{name}-%{version}.tar.gz
-# Source0-md5:	2ec3c29523cc06ec60166b320c489c63
-Patch0:		%{name}-openssl3.patch
+# Source0-md5:	ae9b1c6ccf53834dc4923c3806ff7059
 URL:		https://github.com/OpenSC/libp11
 BuildRequires:	doxygen
 BuildRequires:	openssl-devel >= 3.0.0
@@ -87,7 +86,6 @@ takim jak OpenSC.
 
 %prep
 %setup -q
-%patch -P0 -p1
 
 %build
 %configure \
@@ -107,6 +105,7 @@ cp -af examples/* $RPM_BUILD_ROOT%{_examplesdir}/%{name}-%{version}
 
 # obsoleted by pkgconfig
 %{__rm} $RPM_BUILD_ROOT%{_libdir}/libp11.la
+%{__rm} $RPM_BUILD_ROOT%{_libdir}/libpkcs11.la
 # loadable module
 %{__rm} $RPM_BUILD_ROOT/%{_lib}/engines-3/*.la
 # packaged as %doc
@@ -123,6 +122,9 @@ rm -rf $RPM_BUILD_ROOT
 %doc NEWS README.md
 %attr(755,root,root) %{_libdir}/libp11.so.*.*.*
 %attr(755,root,root) %ghost %{_libdir}/libp11.so.3
+%attr(755,root,root) %{_libdir}/libpkcs11.so.*.*.*
+%attr(755,root,root) %ghost %{_libdir}/libpkcs11.so.0
+%attr(755,root,root) %{_libdir}/libpkcs11.so
 
 %files devel
 %defattr(644,root,root,755)
@@ -135,6 +137,7 @@ rm -rf $RPM_BUILD_ROOT
 %files static
 %defattr(644,root,root,755)
 %{_libdir}/libp11.a
+%{_libdir}/libpkcs11.a
 
 %files apidocs
 %defattr(644,root,root,755)
