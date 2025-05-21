@@ -1,13 +1,13 @@
 Summary:	Layer on top of PKCS#11 API to make using PKCS#11 implementations easier
 Summary(pl.UTF-8):	Warstwa powyżej API PKCS#11 ułatwiająca używanie implementacji PKCS#11
 Name:		libp11
-Version:	0.4.13
+Version:	0.4.14
 Release:	1
 License:	LGPL v2.1+
 Group:		Libraries
 #Source0Download: https://github.com/OpenSC/libp11/releases
 Source0:	https://github.com/OpenSC/libp11/releases/download/%{name}-%{version}/%{name}-%{version}.tar.gz
-# Source0-md5:	ae9b1c6ccf53834dc4923c3806ff7059
+# Source0-md5:	ba79dddbfc4eebed9b7dab754be51e94
 URL:		https://github.com/OpenSC/libp11
 BuildRequires:	doxygen
 BuildRequires:	openssl-devel >= 3.0.0
@@ -105,9 +105,9 @@ cp -af examples/* $RPM_BUILD_ROOT%{_examplesdir}/%{name}-%{version}
 
 # obsoleted by pkgconfig
 %{__rm} $RPM_BUILD_ROOT%{_libdir}/libp11.la
-%{__rm} $RPM_BUILD_ROOT%{_libdir}/libpkcs11.la
-# loadable module
+# loadable modules
 %{__rm} $RPM_BUILD_ROOT/%{_lib}/engines-3/*.la
+%{__rm} $RPM_BUILD_ROOT/%{_lib}/ossl-modules/*.la
 # packaged as %doc
 %{__rm} -r $RPM_BUILD_ROOT%{_docdir}/libp11
 
@@ -122,22 +122,20 @@ rm -rf $RPM_BUILD_ROOT
 %doc NEWS README.md
 %attr(755,root,root) %{_libdir}/libp11.so.*.*.*
 %attr(755,root,root) %ghost %{_libdir}/libp11.so.3
-%attr(755,root,root) %{_libdir}/libpkcs11.so.*.*.*
-%attr(755,root,root) %ghost %{_libdir}/libpkcs11.so.0
-%attr(755,root,root) %{_libdir}/libpkcs11.so
 
 %files devel
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_libdir}/libp11.so
 %{_includedir}/libp11.h
 %{_includedir}/p11_err.h
+# FIXME: too common name
+%{_includedir}/util.h
 %{_pkgconfigdir}/libp11.pc
 %{_examplesdir}/%{name}-%{version}
 
 %files static
 %defattr(644,root,root,755)
 %{_libdir}/libp11.a
-%{_libdir}/libpkcs11.a
 
 %files apidocs
 %defattr(644,root,root,755)
@@ -147,3 +145,5 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %attr(755,root,root) /%{_lib}/engines-3/libpkcs11.so
 %attr(755,root,root) /%{_lib}/engines-3/pkcs11.so
+%attr(755,root,root) /%{_lib}/ossl-modules/libpkcs11.so
+%attr(755,root,root) /%{_lib}/ossl-modules/pkcs11prov.so
